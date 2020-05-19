@@ -1,4 +1,4 @@
-package com.mytest;
+package com.ict.edu6;
 
 public class Student extends Person {
 	private int id;
@@ -20,8 +20,9 @@ public class Student extends Person {
 		this.id = id;
 	}
 
+	@Override
 	public void print() {
-		super.print();
-		System.out.println(" 학번 : "+id);
+		System.out.println("이름 : " + super.getName() + "나이 : " + super.getAge() + " 학번 : " + id);
 	}
+
 }

@@ -40,8 +40,6 @@ public class Ex02 {
 		// 3.
 		// equals(Object anObject) : boolean
 		// 들어온 문자열과 현재 문자열의 내용이 같은지 판별, 같으면 true, 다르면 false => 대소문자 구별O
-		// equalsIgnoreCase(String anotherString) : boolean
-		// 들어온 문자열과 현재 문자열의 내용이 같은지 판별, 같으면 true, 다르면 false => 대소문자 구별X
 		String str5 = "Korea";
 		String str6 = "KOREA";
 		if (str5.equals(str6)) {

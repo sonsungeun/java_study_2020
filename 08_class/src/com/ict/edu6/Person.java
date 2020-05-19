@@ -1,6 +1,6 @@
-package com.mytest;
+package com.ict.edu6;
 
-public class Person {
+public abstract class Person {
 	private String name;
 	private int age;
 
@@ -26,7 +26,6 @@ public class Person {
 		this.age = age;
 	}
 
-	public void print() {
-		System.out.print("이름 : "+name+" 나이 : "+age);
-	}
+	public abstract void print();
+	
 }
