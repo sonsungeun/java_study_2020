@@ -223,7 +223,11 @@ public class Ex02 {
 		System.out.println(msg);
 
 		// QUIZ : 010-7777-9999 => 010-7777-XXXX
-
+		str18 = "010-7777-9999";
+		msg = str18.replace(str18.substring(str18.indexOf("-", str18.indexOf("-") + 1) + 1), "XXXX");
+		System.out.println(msg);
+		msg = str18.replace(str18.substring(9),"XXXX");
+		System.out.println(msg);
 		System.out.println("15,16=====================");
 		// 15.
 		// toLowerCase() : String
@@ -298,64 +302,64 @@ public class Ex02 {
 		System.out.println(num4 + "1");
 		System.out.println("=======20 String을 각종 자료형으로 되돌리기(Wrapper class)========");
 		// 20.
-		//	- rapper class : 각종 자료형의 형태를 가진 문자열을 진짜 자료형으로 변경시키는 클래스들
-		//	- 원래 의미는 기본 자료형을 객체로 만들때 사용하는 클래스(이제는 자동으로 만들어짐)
-		
-		// 20-1. 
+		// - rapper class : 각종 자료형의 형태를 가진 문자열을 진짜 자료형으로 변경시키는 클래스들
+		// - 원래 의미는 기본 자료형을 객체로 만들때 사용하는 클래스(이제는 자동으로 만들어짐)
+
+		// 20-1.
 		// 문자열을 boolean형으로 변경 : Boolean.parseBoolean()
 		// "true"와 "false"만 사용가능
 		String message = "false";
 		boolean m1 = Boolean.parseBoolean(message);
 		if (m1) {
 			System.out.println("변경성공");
-		}else {
+		} else {
 			System.out.println("변경실패");
 		}
 		// 20-2.
 		// 문자열을 int형으로 변경: Integer.parseInt()
 		message = "1234";
 		int m2 = Integer.parseInt(message);
-		System.out.println(message+10);
-		System.out.println(m2+10);
-		
+		System.out.println(message + 10);
+		System.out.println(m2 + 10);
+
 		// 20-3.
 		// 문자열을 long형으로 변경 : Long.parseLong()
 		// "숫자" => O , "숫자L" => X
-		//message = "241L"; //오류발생
+		// message = "241L"; //오류발생
 		message = "241";
 		long m3 = Long.parseLong(message);
-		System.out.println(message+10);
-		System.out.println(m3+10);
+		System.out.println(message + 10);
+		System.out.println(m3 + 10);
 		// 20-4.
 		// 문자열을 float형으로 변경 : Float.parseFloat()
 		message = "3.14";
 		float m4 = Float.parseFloat(message);
-		System.out.println(message+10);
-		System.out.println(m4+10);
+		System.out.println(message + 10);
+		System.out.println(m4 + 10);
 
 		// 20-5.
 		// 문자열을 double형으로 변경 : Double.parseDouble()
 		message = "3.14";
 		double m5 = Double.parseDouble(message);
-		System.out.println(message+10);
-		System.out.println(m5+10);
-		
+		System.out.println(message + 10);
+		System.out.println(m5 + 10);
+
 		// 20-6.
 		// 문자열을 char형으로 변경 : 없다
-		// 							  String.charAt() 사용
+		// String.charAt() 사용
 		message = "A";
 		char m6 = message.charAt(0);
 		System.out.println(m6);
-		System.out.println(m6+10);
-		System.out.println(message+10);
-		
+		System.out.println(m6 + 10);
+		System.out.println(message + 10);
+
 		System.out.println("21=========================");
 		// 21.
 		// toCharArray() : char[]
 		// - 해당문자열을 char[]로 만들어줌
 		// - 모든 문자 사용 가능(getBytes()는 영어와 숫자만 가능)
 		message = "java 자바 JAVA 大韓民國 2020";
-		byte[] m7 = message.getBytes();	// 숫자로 변경(영어와 숫자만 가능)
+		byte[] m7 = message.getBytes(); // 숫자로 변경(영어와 숫자만 가능)
 		for (byte k : m7) {
 			System.out.println(k);
 		}
