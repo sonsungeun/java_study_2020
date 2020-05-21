@@ -15,37 +15,41 @@ public class Hw0518 {
 // 케이스 3*3=9가지
 
 	public static void main(String[] args) {
-
+		Scanner sc = new Scanner(System.in);
 		Random ran = new Random();
-		int computer = ran.nextInt();
 		String res = "";
 		int count = 0;
 		int win = 0;
-		con: while (true) {
-			if (computer % 2 == 0) {
-				res = "높음";
-			} else if (computer % 2 == 1) {
+		
+		esc: while (true) {
+			
+			int com = ran.nextInt();
+			if (com % 2 == 0) {
 				res = "낮음";
+			} else if (com % 2 == 1) {
+				res = "높음";
 			}
-			Scanner sc = new Scanner(System.in);
-			String my = sc.next();
+			System.out.println(res);
+			System.out.print("높음/낮음 선택하세요 >> ");
 			count++;
-			if (my.equals(res)) {
-				System.out.println("맞았습니다!");
+			String input = sc.next();
+			if (input.contains(res)) {
+				System.out.println("맞았습니다.");
 				win++;
 			} else {
 				System.out.println("틀렸습니다.");
+			}
+			System.out.println("계속할까요?(Y/N)");
+			String con = sc.next();
+			if (con.equalsIgnoreCase("Y")) {
+				continue esc;
+			} else if (con.equalsIgnoreCase("N")) {
+				break esc;
+			}
 
-			}
-			System.out.println("승률 : " + win / count * 100 + "%");
-			System.out.println("다시하시겠습니까?(Y/N)");
-			String ans = sc.next();
-			if (ans == "Y" || ans == "y") {
-				continue con;
-			} else if (ans == "N" || ans == "n") {
-				break con;
-			}
 		}
+		System.out.println("판 수 : "+count+"\t이긴 판 수 :"+win+"\t승률 : "+(double)(win)/count*100+"%");
 		System.out.println("감사합니다.");
+
 	}
 }
