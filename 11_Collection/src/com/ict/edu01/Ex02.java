@@ -74,7 +74,7 @@ public class Ex02 {
 		System.out.println();
 		// 언박싱 (오토박싱의 반대) : 객체를 일반적으로 사용하는 자료형으로 변환
 		for (int k : h1) {
-			System.out.print(k + " ");
+			System.out.print(k+1+ " ");
 		}
 		System.out.println();
 		System.out.println("하나씩 보기");
