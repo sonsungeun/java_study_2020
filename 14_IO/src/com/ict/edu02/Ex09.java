@@ -1,4 +1,4 @@
-package com.ict.edu2;
+package com.ict.edu02;
 
 public class Ex09 {
 

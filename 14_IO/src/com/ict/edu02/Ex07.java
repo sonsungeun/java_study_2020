@@ -1,4 +1,4 @@
-package com.ict.edu2;
+package com.ict.edu02;
 
 import java.io.BufferedOutputStream;
 import java.io.File;

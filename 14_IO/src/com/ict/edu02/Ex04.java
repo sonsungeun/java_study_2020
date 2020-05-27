@@ -1,4 +1,4 @@
-package com.ict.edu2;
+package com.ict.edu02;
 //쓰기 InputStream
 
 import java.io.File;
