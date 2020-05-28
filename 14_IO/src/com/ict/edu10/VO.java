@@ -10,13 +10,19 @@ public class VO implements Externalizable {
 	private int sum;
 	private double avg;
 	private String hak;
-
+	private int kor;
+	private int eng;
+	private int math;
+	
 	public VO() {
 		// TODO Auto-generated constructor stub
 	}
 
 	public VO(String name, int kor, int eng, int math) {
 		this.name = name;
+		this.kor = kor;
+		this.eng = eng;
+		this.math = math;
 		this.sum = kor + eng + math;
 		this.avg = (int) (sum / 3.0 * 10) / 10.0;
 		if (this.avg >= 90) {
@@ -30,16 +36,23 @@ public class VO implements Externalizable {
 		}
 
 	}
+	//역직렬화
 	@Override
 	public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
 		name = (String) in.readObject();
 		sum = (int)in.readObject();
 		avg = (double)in.readObject();
 		hak = (String)in.readObject();
-		
-	}@Override
+	
+	
+	}
+	//직렬화
+	@Override
 	public void writeExternal(ObjectOutput out) throws IOException {
 		out.writeObject(name);
+		out.writeObject(kor);
+		out.writeObject(eng);
+		out.writeObject(math);
 		out.writeObject(sum);
 		out.writeObject(avg);
 		out.writeObject(hak);

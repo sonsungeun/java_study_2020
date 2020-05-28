@@ -10,15 +10,23 @@ public class Ex05 implements Runnable {
 
 	@Override
 	public synchronized void run() {
-		
-		
-		
-		
-		
+		for (int i = 1; i < 101; i++) {//i = 한 스레드당 돌리는 횟수(총 200회/2개스레드 = 100)
+			try {
+				Thread.sleep(100);
+				System.out.println(Thread.currentThread().getName() + ":" + ++x);
+				if (x % 50 == 0) {
+					wait();
+				} else {
+					notify();
+				}
+				System.out.println(i);
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+
 	}
-	
-	
-	
+
 	public static void main(String[] args) {
 		Ex05 t = new Ex05();
 		new Thread(t, "tiger").start();
